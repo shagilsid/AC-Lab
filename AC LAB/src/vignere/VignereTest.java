@@ -11,6 +11,7 @@ public class VignereTest {
 		String key=scan.nextLine();
 		StringBuilder sb=new StringBuilder();
 		if(key.length()<pt.length()) {
+			
 			for(int i=0;i<pt.length();) {
 				for(int j=0;j<key.length()&&i<pt.length();j++,i++) {
 					sb.append(key.charAt(j));

@@ -15,6 +15,7 @@ public class EyncDec {
 		this.d=d;
 	}
 
+	/* Works only for capital letters */
 	public void encryption() {
 		for(int j=0;j<size;j++) {
 			
@@ -30,7 +31,8 @@ public class EyncDec {
 			}
 		}
 	}
-
+	
+	/* Works only for capital letters */
 	public void decryption() {
 		for(int j=0;j<size;j++) {
 			

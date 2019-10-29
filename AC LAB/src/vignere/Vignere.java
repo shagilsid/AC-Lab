@@ -8,11 +8,11 @@ StringBuilder encrypt(String key,String plain){
 
 		for(int i=0;i<plain.length();i++){
 			if(Character.isUpperCase(plain.charAt(i))){
-				char ch=(char)(((int)plain.charAt(i)-65+(int)key.charAt(i)-65)%26+65);
+				char ch=(char)((plain.charAt(i)-65+key.charAt(i)-65)%26+65);
 				cipher.append(ch);
 			}
 			else{
-				char ch=(char)(((int)plain.charAt(i)-97+(int)key.charAt(i)-97)%26+97);
+				char ch=(char)((plain.charAt(i)-97+key.charAt(i)-97)%26+97);
 				cipher.append(ch);
 			}
 			
@@ -27,7 +27,7 @@ StringBuilder decrypt(String key,String cipher ){
 
 	for(int i=0;i<cipher.length();i++){
 		if(Character.isUpperCase(cipher.charAt(i))){
-			int keyMod=((int)cipher.charAt(i)-65)-((int)key.charAt(i)-65);
+			int keyMod=(int)((cipher.charAt(i)-65)-(key.charAt(i)-65)%26);
 			if(keyMod<0){
 				keyMod=keyMod+26;}
 			char ch=(char)((keyMod)%26+65);
@@ -35,7 +35,7 @@ StringBuilder decrypt(String key,String cipher ){
 			plain.append(ch);
 		}
 		else{
-			int keyMod=((int)cipher.charAt(i)-97)-((int)key.charAt(i)-97);
+			int keyMod=(int)((cipher.charAt(i)-97)-(key.charAt(i)-97)%26);
 			if(keyMod<0){
 				
 				keyMod=keyMod+26;}

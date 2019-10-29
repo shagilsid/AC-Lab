@@ -2,16 +2,7 @@ package railfence;
 
 public class RailFence {
 	char[][] matrix;
-	void encrypt(String pt, int key) {
-		matrix=new char[key][pt.length()];
-		int j=0;
-		for(int i=0;i<pt.length();i++) {
-			matrix[j%key][i]=pt.charAt(i);
-			j++;
-		}
-		
-	}
-	
+
 	void encrypt2(String pt, int key) {
 		matrix=new char[key][pt.length()];
 		int flag=0,j=0;
@@ -50,19 +41,6 @@ public class RailFence {
 				
 			}
 	
-		}
-		
-	}
-
-	public void decrypt(int key) {
-		
-		System.out.println("Decrypted text is ");
-		int j=0;
-		for(int i=0;i<matrix[0].length;i++) {
-			if(matrix[j%key][i]!='\u0000')
-			System.out.print(matrix[j%key][i]);
-			
-			j++;
 		}
 		
 	}
