@@ -44,7 +44,7 @@ class Ceaser{
 
 		for(int i=0;i<cipher.length();i++){
 			if(Character.isUpperCase(cipher.charAt(i))){
-				int keyMod=(int)cipher.charAt(i)-key-65;
+				int keyMod=(int)(cipher.charAt(i)-key-65)%26;
 				if(keyMod<0){
 					keyMod=keyMod+26;}
 				char ch=(char)((keyMod)%26+65);
@@ -52,7 +52,7 @@ class Ceaser{
 				plain.append(ch);
 			}
 			else{
-				int keyMod=(int)cipher.charAt(i)-key-97;
+				int keyMod=(int)(cipher.charAt(i)-key-97)%26;
 				if(keyMod<0){
 					keyMod=keyMod+26;}
 				char ch=(char)((keyMod)%26+97);
